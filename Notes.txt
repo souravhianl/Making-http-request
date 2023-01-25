@@ -1,0 +1,46 @@
+Handling text inputs:
+
+1.Create a new piece of state
+
+2.Create an event handler to watch the Onchange event
+
+3.When the Onchange event fires, get the value from the input
+
+4. Take that value from the input and use it to update your state
+
+5. Pass your state to the input as the value prop 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+Take the text that the user types in the input and print it inside the 'p' element : 
+
+import React, { useState } from 'react';
+
+function App() {
+    const [value, setValue] = useState('');
+
+    const handleChange = (event) => {
+     setValue(event.target.value);
+
+    }
+
+    return(
+        <div>
+            <div>
+                Enter some text
+            </div>
+            <input value={value} onChange={handleChange} />
+            <h3>Your text</h3>
+            <p>
+            {value}
+            </p>
+
+        </div>
+    )
+
+}
+
+export default App;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+State Update Cheat Sheet : https://state-updates.vercel.app/
